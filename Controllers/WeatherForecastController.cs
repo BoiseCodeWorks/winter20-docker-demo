@@ -13,7 +13,7 @@ namespace docker_demo.Controllers
   {
     private static readonly string[] Summaries = new[]
     {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching", "Icy", "Lava", "Tornado", "SharkNado", "Tony Hawk Hoard"
+            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching", "Icy"
         };
 
     private readonly ILogger<WeatherForecastController> _logger;
@@ -30,7 +30,7 @@ namespace docker_demo.Controllers
       return Enumerable.Range(1, 5).Select(index => new WeatherForecast
       {
         Date = DateTime.Now.AddDays(index),
-        TemperatureC = rng.Next(-20, 55),
+        TemperatureC = rng.Next(-20, 550),
         Summary = Summaries[rng.Next(Summaries.Length)]
       })
       .ToArray();
